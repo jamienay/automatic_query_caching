@@ -1,0 +1,1 @@
+If you already have an AppModel (app_model.php) in your /app directory (which is likely), then just add the functions you find in this app_model.php to your own.
