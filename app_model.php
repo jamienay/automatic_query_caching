@@ -13,7 +13,7 @@ class AppModel extends Model {
    * determines the cache configuration to use - 'default' if not specified.
    */
   function find($type, $options = array()) {
-      $results = $this->__getCachedResults($options);
+      $results = $this->_getCachedResults($options);
       if (!$results) {
           $method = null;
           if (is_string($type)) {
@@ -34,7 +34,7 @@ class AppModel extends Model {
       return $results;
   }
   
-  function __getCachedResults($options) {
+  function _getCachedResults($options) {
       $this->useCache = true;
       if (Configure::read('debug') > 0 || !isset($options['cache']) || $options['cache'] == false) {
           $this->useCache = false;
