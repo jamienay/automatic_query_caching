@@ -36,7 +36,7 @@ class AppModel extends Model {
   
   function _getCachedResults($options) {
       $this->useCache = true;
-      if (Configure::read('debug') > 0 || !isset($options['cache']) || $options['cache'] == false) {
+      if (Configure::read('debug') > 0 || !is_array($options) || !isset($options['cache']) || $options['cache'] == false) {
           $this->useCache = false;
           return false;
       }
